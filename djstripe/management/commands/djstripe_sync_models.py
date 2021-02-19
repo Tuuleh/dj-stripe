@@ -98,10 +98,6 @@ class Command(BaseCommand):
                             djstripe_obj=djstripe_obj,
                         )
                     )
-                    if model is models.Customer:
-                        for tax_id_obj in stripe_obj.tax_ids.data:
-                            models.TaxId._get_or_create_from_stripe_object(tax_id_obj)
-
 
 
         except Exception as e:
